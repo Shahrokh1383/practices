@@ -1,4 +1,4 @@
-//finding and cunting the + , - , av
+//finding and cOunting the + , - , av
 /*#include <iostream>
 using namespace std;
 int main()
@@ -817,7 +817,7 @@ int main()
 	cout << "the r : " << r;
 	return 0;
 }*/
-//making a calculator with finction
+//making a calculator with function
 /*#include <iostream>
 using namespace std;
 int calculator(int n1, int n2, char op)
@@ -1010,7 +1010,7 @@ int main()
 	cout << "the impactful grade : " << stu.impactfulgrade() << '\n';
 	return 0;
 }*/
-//inrage polymorphism finction part 1
+//inrange polymorphism function part 1
 /*#include <iostream>
 using namespace std;
 template <typename T>
@@ -1039,101 +1039,6 @@ int main() {
 	int result4 = inrange(-5, 1, 10);
 	cout << "Result 4: " << result4 << endl; // Output should be -1
 
-	return 0;
-}*/
-//inrage polymorphism finction part 2
-/*#include <iostream>
-using namespace std;
-
-template <typename T>
-int inrange(T x, T low, T high) {
-	if (x >= low && x <= high) {
-		return 0; // x is in range
-	}
-	else if (x < low) {
-		return -1; // x is less than the range
-	}
-	else {
-		return 1; // x is greater than the range
-	}
-}
-
-int main() {
-	int result_int;
-	char result_char;
-
-	cout << "Enter 'c' for character range or 'i' for integer range: ";
-	char choice;
-	cin >> choice;
-
-	switch (choice) {
-	case 'c':
-		char c1, c2;
-		cout << "enter 2 character to set the range :";
-		cin >> c1 >> c2;
-		cout << "Enter a character to see if it is inrange or not : ";
-		char c3 ;
-		cin >> c3;
-		result_char = inrange('c3', 'c1', 'c2');
-		cout << "Result: " << result_char << endl;
-		break;
-
-	case 'i':
-		int i1, i2;
-		cout << "set the range : ";
-		cin >> i1 >> i2;
-		cout << "Enter an integer to see if it is inrage or not : ";
-		int  i3;
-		cin >> i3;
-		result_int = inrange(i3 , i1 , i2);
-		cout << "Result: " << result_int << endl;
-		break;
-
-	default:
-		cout << "Invalid choice!" << endl;
-		break;
-	}
-
-	return 0;
-}*/
-//inrage polymorphism finction part 3
-/*#include <iostream>
-using namespace std;
-int inrange(int x, int low, int high)
-{
-	if (x >= low && x <= high)
-	{
-		return 0;
-	}
-	else if (x < low)
-	{
-		return -1;
-	}
-	else {
-		return 1;
-	}
-}
-int main()
-{
-	int i1, i2, i3;
-	cout << "enter the number : ";
-	cin >> i1;
-	cout << "set the lower bound : ";
-	cin >> i2;
-	cout << "set the hiher bound : ";
-	cin >> i3;
-	int result = inrange(i1, i2, i3);
-	if (result == 0)
-	{
-		cout << i1 << "is in the range [" << i2 << ',' << i3 << "]" << '\n';
-	}
-	else if (result == 1)
-	{
-		cout << i1 << "is higher than " << i3 << '\n';
-	}
-	else {
-		cout << i1 << " is lower then " << i2 << '\n';
-	}
 	return 0;
 }*/
 //counting open and closed parantheeses with class
@@ -1444,7 +1349,7 @@ int main() {
 
 	return 0;
 }*/
-//making a sitch case for power , fibonachi , factoriel and multiply
+//making a switch case for power , fibonachi , factoriel and multiply
 /*#include<iostream>
 using namespace std;
 int fact(int n)
@@ -1544,7 +1449,7 @@ item food[] = {
 	{5, "rice and kebab", 140}
 };
 
-// Beverage item menu
+// Drink item menu
 item drink[] = {
 	{1, "soda", 10},
 	{2, "dough", 12},
@@ -1754,7 +1659,6 @@ int main() {
 
 	return 0;
 }*/
-//cheching the strength of password pt1
 /*#include <iostream>
 #include <string>
 #include <cctype>
@@ -1815,50 +1719,47 @@ bool is_digit(char c) {
 }
 
 bool is_alpha(char c) {
-	return (c >= 'a' && c <= 'z');
+	return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
 }
-
-bool is_alnum(char c) {
-	return is_digit(c) || is_alpha(c);
-}
-
 bool is_lower(char c) {
-	return (c >= 'a' && c <= 'z');
+	return c >= 'a' && c <= 'z';
 }
-
 bool is_upper(char c) {
-	return (c >= 'A' && c <= 'Z');
+	return c >= 'A' && c <= 'Z';
+}
+bool is_special(char c) {
+	return !is_digit(c) && !is_alpha(c);
 }
 
-int calculatePasswordStregth(const string password) {
-	int lengthscore = 0;
-	int digitscore = 0;
-	int specialscore = 0;
-	int uppercase = 0;
-	int lowercase = 0;
+int calculatePasswordStrength(const string& password) {
+	int lengthScore = 0;
+	int digitScore = 0;
+	int uppercaseScore = 0;
+	int lowercaseScore = 0;
+	int specialScore = 0;
 
 	if (password.length() >= 6) {
-		lengthscore = 20;
+		lengthScore = 20;
 	}
 
 	for (char c : password) {
 		if (is_digit(c)) {
-			digitscore = 20;
+			digitScore = 20;
 		}
 		else if (is_alpha(c)) {
-			if (is_alnum(c)) {
-				specialscore = 20;
-			}
 			if (is_lower(c)) {
-				lowercase = 20;
+				lowercaseScore = 20;
 			}
-			if (is_upper(c)) {
-				uppercase = 20;
+			if (is_upper) {
+				uppercaseScore = 20;
 			}
+		}
+		else if (is_special(c)) {
+			specialScore = 20;
 		}
 	}
 
-	int total = lengthscore + lowercase + uppercase + digitscore + specialscore;
+	int total = lengthScore + digitScore + uppercaseScore + lowercaseScore + specialScore;
 	return total;
 }
 
@@ -1867,8 +1768,8 @@ int main() {
 	cout << "Enter the password : ";
 	cin >> password;
 
-	int password_strength = calculatePasswordStregth(password);
-	cout << "Password strength : " << password_strength << "%";
+	int passwordStrength = calculatePasswordStrength(password);
+	cout << "Password strength : " << passwordStrength << "%";
 
 	return 0;
 }*/
@@ -1957,7 +1858,7 @@ int main()
 	}
 	return 0;
 }*/
-//maing a time class
+//making a time class
 /*#include <iostream>
 #include<conio.h>
 using namespace std;
@@ -1998,7 +1899,39 @@ int main()
 	_getch();
 	return 0;
 }*/
-
+//check the number is divisible by 3 or not
+/*#include <iostream>
+#include<conio.h>
+using namespace std;
+int sumDigits(int n) {
+	if (n == 0) {
+		return 0;
+	}
+	else {
+		return n % 10 + sumDigits(n / 10);
+	}
+}
+bool isDivisibleBythree(int n) {
+	return sumDigits(n) % 3 == 0;
+}
+int main() {
+	int number;
+	cout << "enter the 5digit number : ";
+	cin >> number;
+	if (number < 10000 || number > 99999) {
+		cout << "please enter 5 digit number : ";
+		return 1;
+	}
+	int sum = sumDigits(number);
+	if (isDivisibleBythree(number)) {
+		cout << number << " is divisible by 3\n";
+	}
+	else {
+		cout << number << " is not divisible by 3\n";
+	}
+	_getch();
+	return 0;
+}*/
 
 
 
