@@ -1,4 +1,4 @@
-//finding and cOunting the + , - , av
+//finding and counting the + , - , av
 /*#include <iostream>
 using namespace std;
 int main()
@@ -1916,7 +1916,7 @@ bool isDivisibleBythree(int n) {
 }
 int main() {
 	int number;
-	cout << "enter the 5digit number : ";
+	cout << "enter the 5 digit number : ";
 	cin >> number;
 	if (number < 10000 || number > 99999) {
 		cout << "please enter 5 digit number : ";
